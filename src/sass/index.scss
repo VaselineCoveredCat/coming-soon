@@ -1,0 +1,157 @@
+@use "color" as *;
+@use "font" as *;
+@use "space" as *;
+
+$head: "Archivo", "Archivo-fallback", sans-serif;
+$body: "Cormorant Infant", "Cormorant Infant-fallback", serif;
+$shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07), 0 4px 8px rgba(0, 0, 0, 0.07),
+  0 8px 16px rgba(0, 0, 0, 0.07), 0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 64px rgba(0, 0, 0, 0.07);
+
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Archivo"), url("../src/fonts/archivo-v18-latin-700.woff2") format("woff2"),
+    url("../src/fonts/archivo-v18-latin-700.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Infant";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Cormorant Infant"), url("../src/fonts/cormorant-infant-v16-latin-500.woff2") format("woff2"),
+    url("../src/fonts/cormorant-infant-v16-latin-500.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archivo-fallback";
+  src: local("Arial");
+  size-adjust: 98.44000000000005%;
+  ascent-override: 85%;
+}
+
+@font-face {
+  font-family: "Cormorant Infant-fallback";
+  src: local("Times New Roman");
+  size-adjust: 98.06%;
+  ascent-override: 105%;
+}
+
+::selection {
+  color: $neutral98;
+  background-color: $primary80;
+}
+
+:focus-visible {
+  outline: $primary80 solid 0.125em;
+}
+
+html {
+  background-color: $neutral10;
+}
+
+body {
+  box-shadow: $shadow;
+  font-family: $body;
+  font-size: $size-0;
+  font-weight: 500;
+  color: $neutral10;
+  background-color: $neutral98;
+}
+
+h1 {
+  font-family: $head;
+  font-weight: 700;
+  font-size: $size-5;
+  margin-bottom: $gap-l;
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr auto;
+}
+
+main {
+  margin-bottom: $gap-2xl-3xl;
+  place-self: center;
+}
+
+main > div {
+  aspect-ratio: 1 / 1;
+}
+
+main > article {
+  margin: $gap-l-2xl $gap-l-2xl 0 $gap-l-2xl;
+}
+
+main form {
+  margin-top: $gap-s;
+}
+
+main input {
+  width: 100%;
+  background-color: $neutral95;
+  caret-color: $primary80;
+}
+
+main button {
+  margin-top: $gap-s;
+  color: $neutral10;
+  background-color: $primary80;
+}
+
+footer > p {
+  padding: $gap-l-2xl 0;
+  font-size: $size--1;
+  color: $neutral10;
+  text-align: center;
+  background-color: $neutral95;
+}
+
+address {
+  margin: 0 $gap-l-2xl $gap-l-2xl $gap-l-2xl;
+  font-style: normal;
+}
+
+address > div:first-of-type {
+  margin-bottom: $gap-s;
+}
+
+@media (min-width: 40em) {
+  main input {
+    width: initial;
+  }
+
+  address {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-between;
+  }
+
+  address > div:last-of-type {
+    text-align: end;
+  }
+}
+
+@media (min-width: 60em) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main > div {
+    aspect-ratio: 2 / 3;
+    margin: $gap-l-2xl $gap-l-2xl 0 0;
+  }
+
+  main > article {
+    position: sticky;
+    top: 0;
+    grid-area: 1 / 1 / span 1 / span 1;
+    align-self: start;
+  }
+}

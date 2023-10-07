@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <link
+      as="font"
+      crossorigin="anonymous"
+      href="./src/fonts/archivo-v18-latin-700.woff2"
+      rel="preload"
+      type="font/woff2"
+    />
+
+    <link
+      as="font"
+      crossorigin="anonymous"
+      href="./src/fonts/cormorant-infant-v16-latin-500.woff2"
+      rel="preload"
+      type="font/woff2"
+    />
+
+    <link href="./styles/reset.css" rel="stylesheet" />
+    <link href="./styles/main.css" rel="stylesheet" />
+
+    <link href="./favicon.ico" rel="icon" sizes="any" />
+    <link href="./favicon.svg" rel="icon" type="image/svg+xml" />
+    <link href="./apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="./site.webmanifest" rel="manifest" />
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Firas Hasnawan" name="author" />
+    <meta content="Our new website is on its way" name="description" />
+
+    <title>Coming Soon</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        <div>
+          <picture>
+            <source srcset="./src/images/bag.avif" type="image/avif" />
+            <source srcset="./src/images/bag.webp" type="image/webp" />
+            <img alt="" aria-hidden="true" decoding="async" src="./src/images/bag.jpg" />
+          </picture>
+        </div>
+
+        <article>
+          <h1>Our new website is on its way.</h1>
+          <p>Sign up to be the first to know when we launch.</p>
+
+          <form>
+            <label for="email">Enter your email here</label>
+            <input id="email" name="email" type="email" />
+            <button type="submit">Notify Me</button>
+          </form>
+        </article>
+      </main>
+
+      <footer>
+        <address>
+          <div>
+            <p>Contact</p>
+            <a href="mailto:email@email.com">email@email.com</a><br />
+            <a href="tel:+123456789">123456789</a>
+          </div>
+
+          <div>
+            <p>Head Office</p>
+            <p>500 Some Street <br />Some City, Some Kingdom</p>
+          </div>
+        </address>
+
+        <p>&copy; <span class="js-year"></span> by Firas</p>
+      </footer>
+    </div>
+
+    <script defer="true" src="./scripts/main.js"></script>
+  </body>
+</html>
